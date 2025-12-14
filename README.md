@@ -381,24 +381,43 @@ class RecommendationEngine:
 
 ### Installation Steps
 
-1. **Clone Repository**
+1. **Setup Frappe Bench** (if not already done)
 ```bash
-git clone <repository-url>
-cd conference_management_system
+# Install bench
+pip3 install frappe-bench
+
+# Create a new bench
+bench init <<bench-name>> --frappe-branch version-14
+cd <<bench-name>>
+
+# Create a new site
+bench new-site <<site-name>>
 ```
 
-2. **Install Application**
+2. **Get the Conference Management System App**
 ```bash
-bench get-app conference_management_system
-bench --site <site-name> install-app conference_management_system
+# Get the app from GitHub repository
+bench get-app conference_management_system https://github.com/sharath-kv-2025/conference_management_system.git
 ```
 
-3. **Setup Sample Data**
+3. **Install Application**
 ```bash
-bench --site <site-name> migrate
+# Install the app on your site
+bench --site <<site-name>> install-app conference_management_system
+
+# Start the development server
+bench start
 ```
 
 ### Configuration
+
+1. **Access the Application**
+Once installation is complete, access at:
+- **Base URL**: `http://<<site-name>>:8000`
+- **Admin Dashboard**: `http://<<site-name>>:8000/app/admin-dashboard`
+- **Attendee Portal**: `http://<<site-name>>:8000/app/attendee-portal`
+
+2. **System Configuration**
 - Configure email settings for notifications (currently uses mock email service)
 - Payment system is simulated for demonstration (integrate real gateway for production)
 - Configure scheduled tasks for status updates
@@ -426,6 +445,18 @@ The application includes comprehensive sample data:
 - Capacity management verification
 - Conflict detection testing
 - Recommendation engine validation
+
+### Testing Commands
+```bash
+# Run migrations
+bench --site <<site-name>> migrate
+
+# Clear cache
+bench --site <<site-name>> clear-cache
+
+# Restart services
+bench restart
+```
 
 ## Code Quality & Standards
 
