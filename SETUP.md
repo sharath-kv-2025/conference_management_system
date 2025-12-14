@@ -35,7 +35,7 @@ bench new-site conference.local
 
 ```bash
 # Get the app from repository
-bench get-app conference_management_system https://github.com/your-repo/conference_management_system.git
+bench get-app conference_management_system https://github.com/sharath-kv-2025/conference_management_system.git
 
 # Or if you have the app locally
 bench get-app conference_management_system /path/to/conference_management_system
