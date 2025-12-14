@@ -536,13 +536,6 @@ bench restart
 - Performance optimization
 - Security best practices
 
-### Submission Process
-1. Fork the repository
-2. Create feature branch
-3. Implement changes with tests
-4. Submit pull request with documentation
-5. Code review and integration
-
 ## Important Notes
 
 ### Mock/Simulation Features
@@ -555,27 +548,3 @@ This application includes several simulated features for demonstration purposes:
 
 - **Join Links**: Generates placeholder conference join links. For production, integrate with video conferencing platforms like Zoom, Teams, or Google Meet.
 
-### Production Readiness
-
-To make this system production-ready:
-1. Replace mock payment processor with real payment gateway integration
-2. Configure actual email service for notifications
-3. Integrate with real video conferencing platforms
-4. Set up proper SSL certificates and security measures
-5. Configure backup and monitoring systems
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Support
-
-For technical support and questions:
-- Create GitHub issues for bug reports
-- Use discussions for feature requests
-- Follow documentation for setup guidance
-- Contact maintainers for urgent issues
-
----
-
-**Conference Management System** - Built with Frappe Framework for enterprise-grade conference management.

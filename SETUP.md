@@ -45,7 +45,7 @@ bench get-app conference_management_system /path/to/conference_management_system
 
 ```bash
 # Install the app on your site
-bench --site conference.local install-app conference_management_system
+bench --site <<site name>> install-app conference_management_system
 
 # Start the development server
 bench start
@@ -54,9 +54,9 @@ bench start
 ### 4. Access the Application
 
 Once the installation is complete, you can access the application at:
-- **Base URL**: `http://conference.local:8000`
-- **Admin Dashboard**: `http://conference.local:8000/app/admin-dashboard`
-- **Attendee Portal**: `http://conference.local:8000/app/attendee-portal`
+- **Base URL**: `http://<<site name>>:<<port>>`
+- **Admin Dashboard**: `http:////<<site name>>:<<port>>/app/admin-dashboard`
+- **Attendee Portal**: `http:////<<site name>>:<<port>>/app/attendee-portal`
 
 ## Default Users & Credentials
 
@@ -66,21 +66,21 @@ The system automatically creates test users during installation:
 - **Username**: `Administrator`
 - **Password**: `admin` (default Frappe password)
 - **Access**: Full system access, all modules
-- **Dashboard**: `http://conference.local:8000/app/admin-dashboard`
+- **Dashboard**: `http:////<<site name>>:<<port>>/app/admin-dashboard`
 
 ### Conference Admin
 - **Username**: `admin@conference.com`
 - **Password**: `confadmin`
 - **Role**: Conference Admin, System Manager
 - **Access**: Conference management, reports, admin functions
-- **Dashboard**: `http://conference.local:8000/app/admin-dashboard`
+- **Dashboard**: `http:////<<site name>>:<<port>>/app/admin-dashboard`
 
 ### Test Attendee
 - **Username**: `attendee@conference.com`
 - **Password**: `confattendee`
 - **Role**: Attendee
 - **Access**: Conference registration, session booking, payments
-- **Portal**: `http://conference.local:8000/app/attendee-portal`
+- **Portal**: `http:////<<site name>>:<<port>>/app/attendee-portal`
 
 ## Application Features & Access Points
 
@@ -142,7 +142,7 @@ The application automatically generates comprehensive sample data including:
 Configure email settings in Frappe for notifications:
 ```bash
 # Access email settings
-http://conference.local:8000/app/email-account
+http:////<<site name>>:<<port>>/app/email-account
 ```
 
 ### 2. Scheduled Tasks
@@ -208,23 +208,8 @@ The system provides RESTful APIs accessible at:
 
 For development, run in development mode:
 ```bash
-bench --site conference.local set-config developer_mode 1
+bench --site //<<site name>>:<<port>> set-config developer_mode 1
 bench start
-```
-
-### Production Deployment
-
-For production deployment:
-```bash
-# Setup production
-bench setup production
-
-# Enable SSL (optional)
-bench setup lets-encrypt conference.local
-
-# Setup supervisor and nginx
-sudo bench setup supervisor
-sudo bench setup nginx
 ```
 
 ## Testing the Application
@@ -246,7 +231,7 @@ sudo bench setup nginx
 Use tools like Postman or curl to test API endpoints:
 ```bash
 # Get upcoming conferences
-curl -X GET "http://conference.local:8000/api/method/conference_management_system.api.v1.conferences.get_upcoming_conferences"
+curl -X GET "http:////<<site name>>:<<port>>/api/method/conference_management_system.api.v1.conferences.get_upcoming_conferences"
 ```
 
 ## Support
