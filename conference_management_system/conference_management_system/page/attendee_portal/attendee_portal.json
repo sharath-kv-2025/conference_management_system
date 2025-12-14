@@ -1,0 +1,26 @@
+{
+ "creation": "2024-01-01 00:00:00.000000",
+ "doctype": "Page",
+ "idx": 0,
+ "modified": "2024-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Conference Management System",
+ "name": "attendee-portal",
+ "owner": "Administrator",
+ "page_name": "Attendee Portal",
+ "roles": [
+  {
+   "role": "System Manager"
+  },
+  {
+   "role": "Conference Admin"
+  },
+  {
+   "role": "Attendee"
+  }
+ ],
+ "script": "attendee_portal.js",
+ "standard": "Yes",
+ "system_page": 0,
+ "title": "Attendee Portal"
+}

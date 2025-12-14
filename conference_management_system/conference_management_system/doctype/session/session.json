@@ -1,0 +1,110 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:SES-{session_name}-{speaker}-{######}",
+ "creation": "2024-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "session_name",
+  "conference",
+  "speaker",
+  "session_date",
+  "start_time",
+  "end_time",
+  "max_attendees",
+  "description"
+ ],
+ "fields": [
+  {
+   "fieldname": "session_name",
+   "fieldtype": "Data",
+   "label": "Session Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "conference",
+   "fieldtype": "Link",
+   "label": "Conference",
+   "options": "Conference",
+   "reqd": 1
+  },
+  {
+   "fieldname": "speaker",
+   "fieldtype": "Data",
+   "label": "Speaker"
+  },
+  {
+   "fieldname": "start_time",
+   "fieldtype": "Time",
+   "label": "Start Time",
+   "reqd": 1
+  },
+  {
+   "fieldname": "end_time",
+   "fieldtype": "Time",
+   "label": "End Time",
+   "reqd": 1
+  },
+  {
+   "default": "100",
+   "fieldname": "max_attendees",
+   "fieldtype": "Int",
+   "label": "Max Attendees",
+   "reqd": 1
+  },
+  {
+   "fieldname": "session_date",
+   "fieldtype": "Date",
+   "label": "Session Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text Editor",
+   "label": "Session Description"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Conference Management System",
+ "name": "Session",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Conference Admin",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "read": 1,
+   "role": "Attendee"
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "session_name",
+ "track_changes": 1
+}

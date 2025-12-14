@@ -1,0 +1,65 @@
+{
+ "add_total_row": 0,
+ "columns": [],
+ "creation": "2024-01-01 00:00:00.000000",
+ "disable_prepared_report": 0,
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [
+  {
+   "fieldname": "method",
+   "fieldtype": "Select",
+   "label": "HTTP Method",
+   "options": "\nGET\nPOST\nPUT\nDELETE",
+   "wildcard_filter": 0
+  },
+  {
+   "fieldname": "status_code",
+   "fieldtype": "Select",
+   "label": "Status Code",
+   "options": "\n200\n400\n401\n403\n404\n500",
+   "wildcard_filter": 0
+  },
+  {
+   "fieldname": "api_endpoint",
+   "fieldtype": "Data",
+   "label": "API Endpoint",
+   "wildcard_filter": 1
+  },
+  {
+   "fieldname": "from_date",
+   "fieldtype": "Date",
+   "label": "From Date",
+   "wildcard_filter": 0
+  },
+  {
+   "fieldname": "to_date",
+   "fieldtype": "Date",
+   "label": "To Date",
+   "wildcard_filter": 0
+  }
+ ],
+ "is_standard": "Yes",
+ "modified": "2024-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Conference Management System",
+ "name": "API Usage Report",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "",
+ "ref_doctype": "API Log",
+ "report_name": "API Usage Report",
+ "report_type": "Script Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  },
+  {
+   "role": "Conference Admin"
+  },
+  {
+   "role": "Administrator"
+  }
+ ]
+}
