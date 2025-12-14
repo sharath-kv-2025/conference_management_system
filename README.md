@@ -27,7 +27,7 @@ The Conference Management System is an enterprise-grade application that streaml
 - Multi-conference management with automated status tracking
 - Intelligent session scheduling with conflict prevention
 - Comprehensive attendee registration and profile management
-- Mock payment processing with multiple payment methods
+- Simulated payment processing with multiple payment methods (for demonstration)
 - Dynamic session recommendations based on attendee preferences
 - Real-time capacity management and availability tracking
 - Comprehensive API logging and error handling
@@ -107,11 +107,11 @@ Conference Management System
 - Invoice generation with unique identifiers
 - Join link generation for virtual sessions
 
-**Payment Integration**
-- Mock payment processor with realistic scenarios
+**Payment Simulation**
+- Simulated payment processor with realistic scenarios (80% success rate)
 - Multiple payment method support (Credit Card, Debit Card, UPI, Net Banking)
-- Transaction tracking and receipt generation
-- Payment status automation
+- Mock transaction tracking and receipt generation
+- Automated payment status updates for demonstration
 
 ### 5. Recommendation Engine
 
@@ -225,23 +225,23 @@ All APIs follow REST principles with consistent response formats:
 
 ### Payment Processing
 
-#### Mock Payment Processor
+#### Simulated Payment Processor
 ```python
 class PaymentProcessor:
     @staticmethod
     def process_payment(registration_id, payment_method, payment_data):
-        # Realistic payment simulation with 80% success rate
-        # Multiple payment method support
-        # Transaction tracking and receipt generation
-        # Comprehensive error handling
+        # Mock payment simulation with 80% success rate for demonstration
+        # Simulated multiple payment method support
+        # Mock transaction tracking and receipt generation
+        # Comprehensive error handling for realistic testing
 ```
 
-#### Payment Features
-- Multiple payment methods (Credit Card, Debit Card, UPI, Net Banking)
-- Realistic success/failure scenarios
-- Processing fee calculation
-- Transaction ID generation
-- Payment status automation
+#### Payment Simulation Features
+- Simulated payment methods (Credit Card, Debit Card, UPI, Net Banking)
+- Mock success/failure scenarios for testing
+- Simulated processing fee calculation
+- Mock transaction ID generation
+- Automated payment status updates for demonstration
 
 ### Error Handling & Logging
 
@@ -399,8 +399,8 @@ bench --site <site-name> migrate
 ```
 
 ### Configuration
-- Configure email settings for notifications
-- Set up payment gateway credentials (for production)
+- Configure email settings for notifications (currently uses mock email service)
+- Payment system is simulated for demonstration (integrate real gateway for production)
 - Configure scheduled tasks for status updates
 - Set up user roles and permissions
 
@@ -417,8 +417,8 @@ The application includes comprehensive sample data:
 - 6 conferences with various statuses
 - 20+ sessions across conferences
 - 50 attendees with realistic profiles
-- 100+ registrations with payment tracking
-- Email logs and API usage data
+- 100+ registrations with simulated payment tracking
+- Mock email logs and API usage data for demonstration
 
 ### Test Scenarios
 - Registration workflow testing
@@ -511,6 +511,27 @@ The application includes comprehensive sample data:
 3. Implement changes with tests
 4. Submit pull request with documentation
 5. Code review and integration
+
+## Important Notes
+
+### Mock/Simulation Features
+
+This application includes several simulated features for demonstration purposes:
+
+- **Payment Processing**: Uses a mock payment processor that simulates real payment scenarios with 80% success rate. For production use, integrate with actual payment gateways like Stripe, PayPal, or Razorpay.
+
+- **Email Service**: Uses a mock email service that logs emails to the database instead of sending real emails. For production, configure SMTP settings or integrate with email services like SendGrid or AWS SES.
+
+- **Join Links**: Generates placeholder conference join links. For production, integrate with video conferencing platforms like Zoom, Teams, or Google Meet.
+
+### Production Readiness
+
+To make this system production-ready:
+1. Replace mock payment processor with real payment gateway integration
+2. Configure actual email service for notifications
+3. Integrate with real video conferencing platforms
+4. Set up proper SSL certificates and security measures
+5. Configure backup and monitoring systems
 
 ## License
 
